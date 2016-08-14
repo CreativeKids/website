@@ -6,6 +6,17 @@ function relative(url) {
     return urlRoot + '/' + url;
   }
   return url;
+}
+function list_checkboxes() {
+  var ul = document.getElementsByTagName("ul")
+  for (var x = 0; x < ul.length; x++) {
+    if (ul[x].className == 'breadcrumbs-list') continue;
+    ul[x].addEventListener('click', function(e) {
+      if(e.target && e.target.nodeName == "LI") {
+        e.target.classList.toggle('activity-done');
+      }
+    }, false);
+  }
 }</script></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><div class="navigation"><a href="../../index.html"><span aria-hidden="true" class="glyphicon glyphicon-home"></span><span>&nbsp;</span><span data-i18n="html=layout.home">Home</span></a><span>&nbsp;/&nbsp;</span><img src="../logo-black.png"/><a href="..">Scratch</a></div><a data-i18n="title=layout.takeTour" title="Take introduction tour" data-placement="bottom" href="#" class="intro"><span class="icon"></span><span class="text">Intro</span></a><form class="search"><input type="text" data-i18n="placeholder=layout.search" placeholder="Search" class="form-control"/></form></div></div><div class="search"><h1 data-i18n="html=layout.searchResults">Search Results</h1><div class="results"></div></div><div class="col-xs-12"><header class="clearfix"><img src="../logo-black.png" class="logo hidden-xs"/><h1 class="title">Lærerveiledning - Straffespark</h1><div class="lesson-icons"><a href=".." class="course"><img src="../logo-white.png"/><span>Scratch</span></a><div class="pdf"><a href="/scratch/dive/README.pdf" data-i18n="title=layout.downloadPdf" title="Download PDF"><span class="icon"></span><span class="text">PDF</span></a></div><div class="lesson-link"><a href="dive.html"><span class="icon"></span><span data-i18n="html=layout.lesson" class="text">Lesson</span></a></div></div></header></div><div class="col-xs-12"><div class="content"><section class="intro" id="informasjon-til-veiledere">
 <h1 class="intro" id="informasjon-til-veiledere">Informasjon til veiledere</h1>
 <p>Straffespark er et enkelt fotballspill, hvor man skal prøve å score på
@@ -205,10 +216,11 @@ Function.prototype.bind = Function.prototype.bind || function (thisp) {
 $(document).ready(function(){
   $('pre').has('code.blocks').addClass('blocks');
   scratchblocks.renderMatching('code.blocks', {
-    languages: ['nb', 'en']
+    languages: ['en', 'nb']
   });
   scratchblocks.renderMatching('code.b', {
-    languages: ['nb', 'en'],
+    languages: ['en', 'nb'],
     inline: true
   });
+  list_checkboxes();
 });</script></body></html>

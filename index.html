@@ -6,6 +6,17 @@ function relative(url) {
     return urlRoot + '/' + url;
   }
   return url;
+}
+function list_checkboxes() {
+  var ul = document.getElementsByTagName("ul")
+  for (var x = 0; x < ul.length; x++) {
+    if (ul[x].className == 'breadcrumbs-list') continue;
+    ul[x].addEventListener('click', function(e) {
+      if(e.target && e.target.nodeName == "LI") {
+        e.target.classList.toggle('activity-done');
+      }
+    }, false);
+  }
 }</script></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><div class="navigation"><a href="index.html"><span aria-hidden="true" class="glyphicon glyphicon-home"></span><span>&nbsp;</span><span data-i18n="html=layout.home">Home</span></a></div><a data-i18n="title=layout.takeTour" title="Take introduction tour" data-placement="bottom" href="#" class="intro"><span class="icon"></span><span class="text">Intro</span></a><form class="search"><input type="text" data-i18n="placeholder=layout.search" placeholder="Search" class="form-control"/></form></div></div><div class="search"><h1 data-i18n="html=layout.searchResults">Search Results</h1><div class="results"></div></div><div class="col-xs-12"><div class="content"><section>
 <h1 id="projects">Projects</h1>
 </section>
