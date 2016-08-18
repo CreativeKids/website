@@ -1,3 +1,3 @@
-# Creative Kids Website
-
-The main website located at [http://www.creativekidssa.com.au](http://www.creativekidssa.com.au)
+# Creative Kids Projects
+Note: Do NOT edit the files in this subdirectory.
+This directory is synced with the projects at https://github.com/CreativeKids/projects
