@@ -1,0 +1,30 @@
+body {
+	text-align: justify;
+	font-family: helvetica;
+	
+	margin-top: 30px;
+	margin-left: 180px;
+	margin-right: 180px;
+}
+
+a {
+	color: #0566db;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #328bf7;
+	color: #529fff;
+}
+
+h1 {
+	color: #f97d35;
+}
+
+p {
+	/*display: block;*/	
+}
+
+#announcement {
+  background-color: #d3d3d3;
+}
