@@ -93,7 +93,7 @@
 
 .slideshow ul {
 	width: 100%;
-	height: 100%;
+	height: 20%;
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 	-webkit-transform: translate3d(0,0,150px);
@@ -150,20 +150,25 @@
 	transition: opacity 0.3s, visibility 0s 0.3s;
 }
 
+.slideshow pre {
+    max-height: 10em;
+    overflow: auto;
+}
+
 .slideshow figure {
 	width: 100%;
-	height: 100%;
+	/*height: 100%;*/
 	background: #fff;
 	border: 50px solid #fff;
 	border-top-width: 25px;
 	border-left-width: 0px;
-	border-bottom-width: 100px;
+	/*border-bottom-width: 100px;*/
 	border-right-width: 0px;
 	overflow: visible;
 }
 
 .slideshow figcaption {
-	padding-bottom: 20px;
+	/*padding-bottom: 20px;*/
 	margin-left: 60px;
 }
 
