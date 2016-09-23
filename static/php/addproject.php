@@ -125,8 +125,9 @@ fclose($content_file);
 uploadFile($_FILES["thumbnail"], $fullpath, array("jpg", "png", "jpeg"));
 uploadFile($_FILES["projectfile"], $fullpath, array("sb", "sb2"));
 
-$cmd = "cd ../../../ && lektor build -O build";
-exec($cmd . " > /dev/null &");  
+$cmd = "cd ../../../ && PATH=$PATH:/usr/bin /usr/local/node/bin/lektor build -O build --no-prune";
+exec($cmd, $output);
+$logfile .= print_r($output, true);
 
 // Write the contents back to the file
 file_put_contents($file, $logfile);
