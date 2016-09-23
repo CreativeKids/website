@@ -5,9 +5,8 @@ header('Content-type: application/json');
 $response_array['status'] = 'success';
 
 $file = "addproject_log.txt";
-// Open the file to get existing content
-$logfile = file_get_contents($file);
-// Append a new person to the file
+
+$logfile = "";
 $logfile .= print_r($_POST, true);
 $logfile .= print_r($_FILES, true);
 
@@ -20,8 +19,7 @@ function test_input($data) {
 }
 
 function error($msg, $path) {
-    array_map('unlink', glob("$path/*"));
-    rmdir($path);
+    global $file;
     $response_array['status'] = $msg;
     // Write the contents back to the file
     file_put_contents($file, $msg);
@@ -30,7 +28,7 @@ function error($msg, $path) {
 }
 
 function uploadFile($file, $fullpath, $allowed) {
-
+    global $logfile;
 
     $target_dir = "$fullpath";
     $target_file = $target_dir . "/" . basename($file["name"]) ;
@@ -125,7 +123,7 @@ fclose($content_file);
 uploadFile($_FILES["thumbnail"], $fullpath, array("jpg", "png", "jpeg"));
 uploadFile($_FILES["projectfile"], $fullpath, array("sb", "sb2"));
 
-$cmd = "cd ../../../ && PATH=$PATH:/usr/bin /usr/local/node/bin/lektor build -O build --no-prune";
+$cmd = "cd ../../../ && PATH=\$PATH:/usr/bin:/usr/local/node/bin lektor build -O build --no-prune";
 exec($cmd, $output);
 $logfile .= print_r($output, true);
 

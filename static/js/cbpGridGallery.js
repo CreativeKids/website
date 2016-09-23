@@ -63,26 +63,28 @@
 	};
 
 	CBPGridGallery.prototype._init = function() {
-		// main grid
-		this.grid = this.el.querySelector( 'section.grid-wrap > ul.grid' );
-		// main grid items
-		this.gridItems = [].slice.call( this.grid.querySelectorAll( 'li:not(.grid-sizer)' ) );
-		// items total
-		this.itemsCount = this.gridItems.length;
-		// slideshow grid
-		this.slideshow = this.el.querySelector( 'section.slideshow > ul' );
-		// slideshow grid items
-		this.slideshowItems = [].slice.call( this.slideshow.children );
-		// index of current slideshow item
-		this.current = -1;
-		// slideshow control buttons
-		this.ctrlPrev = this.el.querySelector( 'section.slideshow > nav > span.nav-prev' );
-		this.ctrlNext = this.el.querySelector( 'section.slideshow > nav > span.nav-next' );
-		this.ctrlClose = this.el.querySelector( 'section.slideshow > nav > span.nav-close' );
-		// init masonry grid
-		this._initMasonry();
-		// init events
-		this._initEvents();
+	    if (this.el) {
+		    // main grid
+		    this.grid = this.el.querySelector( 'section.grid-wrap > ul.grid' );
+		    // main grid items
+		    this.gridItems = [].slice.call( this.grid.querySelectorAll( 'li:not(.grid-sizer)' ) );
+		    // items total
+		    this.itemsCount = this.gridItems.length;
+		    // slideshow grid
+		    this.slideshow = this.el.querySelector( 'section.slideshow > ul' );
+		    // slideshow grid items
+		    this.slideshowItems = [].slice.call( this.slideshow.children );
+		    // index of current slideshow item
+		    this.current = -1;
+		    // slideshow control buttons
+		    this.ctrlPrev = this.el.querySelector( 'section.slideshow > nav > span.nav-prev' );
+		    this.ctrlNext = this.el.querySelector( 'section.slideshow > nav > span.nav-next' );
+		    this.ctrlClose = this.el.querySelector( 'section.slideshow > nav > span.nav-close' );
+		    // init masonry grid
+		    this._initMasonry();
+		    // init events
+		    this._initEvents();
+		}
 	};
 
 	CBPGridGallery.prototype._initMasonry = function() {
@@ -108,7 +110,9 @@
 		// slideshow controls
 		//this.ctrlPrev.addEventListener( 'click', function() { self._navigate( 'prev' ); } );
 		//this.ctrlNext.addEventListener( 'click', function() { self._navigate( 'next' ); } );
-		this.ctrlClose.addEventListener( 'click', function() { self._closeSlideshow(); } );
+		if (this.ctrlClose) {
+		    this.ctrlClose.addEventListener( 'click', function() { self._closeSlideshow(); } );
+		}
 
 		// window resize
 		window.addEventListener( 'resize', function() { self._resizeHandler(); } );
@@ -172,10 +176,6 @@
 			var translateVal = Number( getViewportW() / 2 + this.nextItem.offsetWidth / 2 );
 			setTransform( this.nextItem, support.support3d ? 'translate3d(' + translateVal + 'px, 0, -150px)' : 'translate(' + translateVal + 'px)' );
 		}
-
-		// always start in small screen initially.
-		JSsetPresentationMode(false);
-	  loadSWF(this.currentItem.id);
 	};
 
 	CBPGridGallery.prototype._navigate = function( dir ) {
@@ -290,8 +290,6 @@
 		classie.removeClass( this.el, 'slideshow-open' );
 		// remove class animatable from the slideshow grid
 		classie.removeClass( this.slideshow, 'animatable' );
-
-		deleteSWF(this.currentItem.id);
 
 		var self = this,
 			onEndTransitionFn = function( ev ) {
