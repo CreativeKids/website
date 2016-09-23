@@ -27,6 +27,12 @@ function error($msg, $path) {
     exit();
 }
 
+function error_del($msg, $path) {
+    array_map('unlink', glob("$path/*"));
+    rmdir($path);
+    error($msg, $path);
+}
+
 function uploadFile($file, $fullpath, $allowed) {
     global $logfile;
 
@@ -37,13 +43,13 @@ function uploadFile($file, $fullpath, $allowed) {
 
     // Check if file already exists
     if (file_exists($target_file)) {
-        error("Sorry, file $target_file already exists.", $fullpath);
+        error_del("Sorry, file $target_file already exists.", $fullpath);
         $uploadOk = 0;
     }
 
     // Check file size (20Mb maximum)
     if ($file["size"] > 20000000) {
-        error("Sorry, your file is too large (> 20Mb).", $fullpath);
+        error_del("Sorry, your file is too large (> 20Mb).", $fullpath);
         $uploadOk = 0;
     }
 
@@ -64,22 +70,22 @@ function uploadFile($file, $fullpath, $allowed) {
            $idx = $idx + 1;
         }
         if (in_array("jpg", $allowed)) {
-            error($msg . "files are allowed for Project Thumbnail.", $fullpath);
+            error_del($msg . "files are allowed for Project Thumbnail.", $fullpath);
         } else {
-            error($msg . "files are allowed for Project File.", $fullpath);
+            error_del($msg . "files are allowed for Project File.", $fullpath);
         }
         $uploadOk = 0;
     }
 
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
-        error("Sorry, your file was not uploaded.", $fullpath);
+        error_del("Sorry, your file was not uploaded.", $fullpath);
     // if everything is ok, try to upload file
     } else {
         if (move_uploaded_file($file["tmp_name"], $target_file)) {
             $logfile .= "The file ". basename( $file["name"]). " has been uploaded.";
         } else {
-            error("Sorry, there was an error uploading your file.", $fullpath);
+            error_del("Sorry, there was an error uploading your file.", $fullpath);
         }
     }
 }
