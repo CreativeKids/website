@@ -57,54 +57,91 @@
 <p><em>Start by downloading and opening the starter project in Scratch.</em></p>
 <h2 class=check>Checklist </h2>
 <ul>
-<li>Download the <a href="../../../projects/scratch/it-was-a-dark-and-stormy-night/dark-and-stormy-night-starter-project.sb2">starter project</a>.</li>
-<li>Open the project in Scratch.</li>
+<li><p>Download the <a href="../../../projects/scratch/it-was-a-dark-and-stormy-night/dark-and-stormy-night-starter-project.sb2">starter project</a>.</p>
+</li>
+<li><p>Open the project in Scratch.</p>
+</li>
 </ul>
 <h1 class=activity>Step 2: Make it Rain </h1>
 <p>In this step, you will program the rain sprite to repeat moving from the top of the screen to the bottom. This will make it look like it's raining in your story.</p>
 <h2 class=check>Checklist </h2>
 <p>First, we will set a starting position for the rain and make it move down to look like falling rain.</p>
 <ul>
-<li>From the <code>motion</code> menu, drag out the following block:<pre><code class="lang-blocks">go to x: [] y: []
+<li>From the <code>motion</code> menu, drag out the following block:</li>
+</ul>
+<pre><code class="lang-blocks">go to x: [] y: []
 </code></pre>
+<ul>
+<li><p>The top of the stage is <code>Y = 180</code>. This is where we want the rain to start. Enter <code>180</code> for the Y value of the <code>go to x y</code> block.</p>
 </li>
-<li>The top of the stage is <code>Y = 180</code>. This is where we want the rain to start. Enter <code>180</code> for the Y value of the <code>go to x y</code> block.</li>
-<li>Click on the block to test your program. What happens?</li>
-<li>We need to make the rain sprite glide down so that it looks like rain is falling. Drag out the following block and attach it to the <code>go to x y</code> block:<pre><code class="lang-blocks">glide [] secs to x: [] y: []
-</code></pre>
+<li><p>Click on the block to test your program. What happens?</p>
 </li>
-<li>The bottom of the stage is <code>Y = -180</code>. Enter <code>-180</code> into the Y spot of the <code>glide</code> block. </li>
-<li>Click on the blocks to test your program. What happens?</li>
-<li>We want the rain to continue falling forever. Can you find the right block to do this?</li>
-<li>Experiment with your program.  Try changing the seconds value in the <code>glide</code> block. What effect does this have on the rain?</li>
-<li>Finally, add an easy way to start your program. Drag out the following block and connect it at the top of your program:<pre><code class="lang-blocks">when green flag clicked
-</code></pre>
+<li><p>We need to make the rain sprite glide down so that it looks like rain is falling. Drag out the following block and attach it to the <code>go to x y</code> block:</p>
 </li>
 </ul>
+<pre><code class="lang-blocks">glide [] secs to x: [] y: []
+</code></pre>
+<ul>
+<li><p>The bottom of the stage is <code>Y = -180</code>. Enter <code>-180</code> into the Y spot of the <code>glide</code> block.</p>
+</li>
+<li><p>Click on the blocks to test your program. What happens?</p>
+</li>
+<li><p>We want the rain to continue falling forever. Can you find the right block to do this?</p>
+</li>
+<li><p>Experiment with your program.  Try changing the seconds value in the <code>glide</code> block. What effect does this have on the rain?</p>
+</li>
+<li><p>Finally, add an easy way to start your program. Drag out the following block and connect it at the top of your program:</p>
+</li>
+</ul>
+<pre><code class="lang-blocks">when green flag clicked
+</code></pre>
 <p>Please show your teacher or supervisor your program before moving on to the next step.</p>
 <h1>Step 3: Lightning Flash</h1>
 <p>In this step, you will make lightning occur by changing the backdrop.</p>
 <h2 class=check>Checklist </h2>
 <p>So far, we have only created code for a sprite. In this step, we will program the stage.</p>
 <ul>
-<li>Select the stage. You can program a stage to do almost everything a sprite can do, except move.</li>
-<li>Look in the <code>backdrops</code> tab. You should see two backdrops: one for the night sky, and one that's bright like lightning.</li>
-<li>Try clicking quickly between the two backdrops. We will program the computer to make this flash happen automatically.</li>
-<li>Drag out the following block:<pre><code class="lang-blocks">next backdrop
-</code></pre>
+<li><p>Select the stage. You can program a stage to do almost everything a sprite can do, except move.</p>
 </li>
-<li>Click the block to test your program. What happens?</li>
-<li>Like the last step, we want this block to repeat but this time we only want the lightning to flash a few times, not forever. Drag out the following block:<pre><code class="lang-blocks">repeat [10]
-</code></pre>
+<li><p>Look in the <code>backdrops</code> tab. You should see two backdrops: one for the night sky, and one that's bright like lightning.</p>
 </li>
-<li>Click on the blocks to test your program. What happens?</li>
-<li>If you wish to change the speed of the lightning, drag out the following block and connect it to the <code>next backdrop</code> block. Set its value to a really small number such as <code>.1</code> or <code>.01</code>:<pre><code class="lang-blocks">wait [] secs
-</code></pre>
+<li><p>Try clicking quickly between the two backdrops. We will program the computer to make this flash happen automatically.</p>
 </li>
-<li>Experiment with your program. Try changing the number in the <code>repeat</code> block. What happens if you enter an odd number?</li>
-<li>Add the following block so that the lightning flashes at the beginning of the story:<pre><code class="lang-blocks">when green flag clicked
-</code></pre>
+<li><p>Drag out the following block:</p>
 </li>
+</ul>
+<pre><code class="lang-blocks">next backdrop
+</code></pre>
+<ul>
+<li><p>Click the block to test your program. What happens?</p>
+</li>
+<li><p>Like the last step, we want this block to repeat but this time we only want the lightning to flash a few times, not forever. Drag out the following block:</p>
+</li>
+</ul>
+<pre><code class="lang-blocks">repeat [10]
+</code></pre>
+<ul>
+<li><p>Click on the blocks to test your program. What happens?</p>
+</li>
+<li><p>If you wish to change the speed of the lightning, drag out the following block and connect it to the <code>next backdrop</code> block. Set its value to a really small number such as <code>.1</code> or <code>.01</code>:</p>
+</li>
+</ul>
+<pre><code class="lang-blocks">wait [] secs
+</code></pre>
+<ul>
+<li><p>Experiment with your program. Try changing the number in the <code>repeat</code> block. What happens if you enter an odd number?</p>
+</li>
+<li><p>To make sure that the stage always starts with the night sky add the following block at the top of the stack:</p>
+</li>
+</ul>
+<pre><code class="lang-blocks">switch backdrop to [Night Sky]
+</code></pre>
+<ul>
+<li>Finally, add the following block so that the lightning flashes at the beginning of the story:</li>
+</ul>
+<pre><code class="lang-blocks">when green flag clicked
+</code></pre>
+<ul>
 <li>Test your program to ensure it is working correctly. </li>
 </ul>
 <p>Please show your teacher or supervisor your program before moving on to the next step.</p>
@@ -113,25 +150,42 @@
 <h2 class=check>Checklist </h2>
 <p>In the previous step, we programmed lightning to flash. Lightning isn't predictable and it doesn't flash on command. In this step, we will program the lightning to randomly flash throughout your story.</p>
 <ul>
-<li>Place a <code>forever</code> block around the <code>repeat</code> block. This should make the lightning repeat for the entire story.</li>
-<li>Click the green flag to test your program. What happens?</li>
-<li>Too much lightning! To add a break, add a <code>wait</code> block before the <code>repeat</code> block. Your program should look similar to this:<pre><code class="lang-blocks">when green flag clicked
+<li><p>Place a <code>forever</code> block around the <code>repeat</code> block. This should make the lightning repeat for the entire story.</p>
+</li>
+<li><p>Click the green flag to test your program. What happens?</p>
+</li>
+<li><p>Too much lightning! To add a break, add a <code>wait</code> block before the <code>repeat</code> block. Your program should look similar to this:</p>
+</li>
+</ul>
+<pre><code class="lang-blocks">when green flag clicked
+switch backdrop to [Night Sky]
 forever
 wait [4] secs
 repeat [10]
 next backdrop
 wait [0.01] secs
 </code></pre>
+<ul>
+<li><p>Test your program. What happens now?</p>
 </li>
-<li>Test your program. What happens now?</li>
-<li>In nature, lightning does not strike in a pattern. Sometimes there might be 1 second between strikes, other times the interval may be much longer. To make your story setting more realistic, make the computer wait a random amount of time between lightning strikes. Add the following block inside the top <code>wait</code> block:<pre><code class="lang-blocks">pick random [] to []
+<li><p>In nature, lightning does not strike in a pattern. Sometimes there might be 1 second between strikes, other times the interval may be much longer. To make your story setting more realistic, make the computer wait a random amount of time between lightning strikes. Add the following block inside the top <code>wait</code> block:</p>
+</li>
+</ul>
+<pre><code class="lang-blocks">pick random [] to []
 </code></pre>
-</li>
+<ul>
 <li>Experiment with the two numbers inside this block. Every time this block runs, Scratch will pick a random number between these two numbers. </li>
 </ul>
 <p>Please show your teacher or supervisor your program before moving on to the next step.</p>
 <h1>Step 5: It was a dark and stormy night...</h1>
 <p>Now it's time to get creative! What kind of story will you create in this setting? What kind of characters would be out in this storm? Why are they there? Are they lost or trying to get home? Has something bad happened or is something bad about to happen? Use your imagination and get creative!</p>
+<h2 class=check>Checklist </h2>
+<ul>
+<li><p>When you are finished, share your creation in the <a href="../../../galleries/scratch">Scratch Project Gallery</a>!</p>
+</li>
+<li><p>I'm done!</p>
+</li>
+</ul>
 </div></header>
 
 <p style="text-align:center"><a href="..">Return to project list.</a></p>
