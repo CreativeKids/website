@@ -176,6 +176,9 @@
 			var translateVal = Number( getViewportW() / 2 + this.nextItem.offsetWidth / 2 );
 			setTransform( this.nextItem, support.support3d ? 'translate3d(' + translateVal + 'px, 0, -150px)' : 'translate(' + translateVal + 'px)' );
 		}
+                // always start in small screen initially.
+ 		JSsetPresentationMode(false);
+ 	        loadSWF(this.currentItem.id);
 	};
 
 	CBPGridGallery.prototype._navigate = function( dir ) {
@@ -290,6 +293,8 @@
 		classie.removeClass( this.el, 'slideshow-open' );
 		// remove class animatable from the slideshow grid
 		classie.removeClass( this.slideshow, 'animatable' );
+                
+                deleteSWF(this.currentItem.id);
 
 		var self = this,
 			onEndTransitionFn = function( ev ) {
