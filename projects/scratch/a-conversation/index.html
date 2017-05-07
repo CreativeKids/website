@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Conversation - Creative Kids</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="Rhys Moyne" />
+<link rel="stylesheet" href="../../../static/bootstrap.min.css"/>
+<link rel="stylesheet" href="../../../static/demo.css"/>
+<link rel="stylesheet" href="../../../static/component.css"/>
+<script src="../../../static/js/modernizr.custom.js"></script>
+
+
+
+
+<script type="text/javascript">
+
+      function list_checkboxes() {
+        var ul = document.getElementsByTagName("ul")
+        for (var x = 0; x < ul.length; x++) {
+          if (ul[x].className == 'breadcrumbs-list') continue;
+          ul[x].addEventListener('click', function(e) {
+            if(e.target && e.target.nodeName == "LI") {
+              e.target.classList.toggle('activity-done');
+            }
+          }, false);
+        }
+      }
+      document.addEventListener('DOMContentLoaded', function(){
+  scratchblocks.renderMatching('code.lang-blocks', {languages: ['en']});
+  scratchblocks.renderMatching("code.b", {inline: true});
+  list_checkboxes();
+});
+</script>
+<link rel="stylesheet" href="../../../static/lesson.css"/>
+
+</head>
+<body>
+    
+
+
+<div class="container">
+	<header class="clearfix">
+		<p><a href="../../..">Home</a> > <a href="../..">Projects</a> > <a href="..">Scratch</a> > <a href=".">A Conversation</a></p>
+
+		<h1>A Conversation</h1><br/><br/>
+		<p style="position:absolute">by Google CS First </p>
+                
+		<br/><p>Modified by Rhys Moyne</p>
+		
+		<br/><p>License: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed">CC-BY-SA 4.0</a></p>
+	</header>
+
+<header class="instructions"><div><h1 class=intro>Introduction </h1>
+<p>In this project you will create a conversation between two or more characters. You will learn how to add sprites, a backdrop and how to properly sequence a conversation.</p>
+<p><img src="../../../projects/scratch/a-conversation/a-conversation.png" alt=""></p>
+<h1>Creative Challenges</h1>
+<p>Choose from one of the following creative challenges in order to complete this project (or design your own):</p>
+<ul>
+<li><p>Create a conversation between <strong>three</strong> characters in which one of the characters is really small (hint: you will need to use the <img src="../../../projects/scratch/a-conversation/larger.png" alt=""> and <img src="../../../projects/scratch/a-conversation/smaller.png" alt=""> buttons to grow or shrink a sprite)</p>
+</li>
+<li><p>Create a conversation in which one of the characters is injured from falling out of a tree/truck/car</p>
+</li>
+<li><p>Create a conversation that features a joke</p>
+</li>
+<li><p>Your own creative challenge (please discuss with your teacher/supervisor before continuing)</p>
+</li>
+</ul>
+<h1 class=activity>Step 1: Choose a setting </h1>
+<p>First, choose a suitable backdrop to suit the theme of your story.</p>
+<h2 class=check>Checklist </h2>
+<ul>
+<li>Click on  <img src="../../../projects/scratch/a-conversation/scratch_background_icon.png" alt=""> and choose a suitable backdrop for your conversation.</li>
+</ul>
+<h1 class=activity>Step 2: Choose your characters </h1>
+<p>Choose the characters that you want in your story.</p>
+<h2 class=check>Checklist </h2>
+<ul>
+<li><p>Click on <img src="../../../projects/scratch/a-conversation/new-sprite.png" alt=""> and choose each character you want in the conversation.</p>
+</li>
+<li><p>Place the characters in the scene as you want them. To face a character in the opposite direction, click on the 'Costumes' tab and click on the 'Flip left-right' button which looks like this: <img src="../../../projects/scratch/a-conversation/flip-left-right.png" alt=""></p>
+</li>
+</ul>
+<h1>Step 3: Sequence the conversation</h1>
+<p>Now it is time to create the conversation. It may help you if you write down your conversation on paper first.</p>
+<h2 class=check>Checklist </h2>
+<ul>
+<li>Select the sprite that will speak first. Drag out the following two blocks:</li>
+</ul>
+<pre><code class="lang-blocks">when green flag clicked
+say [Hello] for [2] secs
+</code></pre>
+<ul>
+<li><p>Click once in the 'Hello' section and type in the first sentence this character will say.</p>
+</li>
+<li><p>Test your program works by clicking on the green flag <img src="../../../projects/scratch/a-conversation/flag.png" alt=""></p>
+</li>
+<li><p>Now choose the next character that will speak and add the following three blocks:</p>
+</li>
+</ul>
+<pre><code class="lang-blocks">when green flag clicked
+wait [2] secs
+say [Hello] for [2] secs
+</code></pre>
+<ul>
+<li><p>Notice that we have to tell the character to wait two seconds before speaking. Change the 'Hello' to the first sentence this character will say. What would happen if you did not have this block?</p>
+</li>
+<li><p>Test that your program works by clicking on the green flag <img src="../../../projects/scratch/a-conversation/flag.png" alt=""></p>
+</li>
+<li><p>Continue adding the sentences of your conversation to each of the characters, remembering to use the <code>wait</code> block so that the conversation is sequenced correctly.</p>
+</li>
+<li><p>When you are finished, test your program works by clicking on the green flag <img src="../../../projects/scratch/a-conversation/flag.png" alt=""></p>
+</li>
+</ul>
+<h2 class=check>Finished? </h2>
+<ul>
+<li><p>When you are finished, share your creation in the <a href="../../../galleries/scratch">Scratch Project Gallery</a>!</p>
+</li>
+<li><p>I'm done!</p>
+</li>
+</ul>
+</div></header>
+
+<p style="text-align:center"><a href="..">Return to project list.</a></p>
+
+</div>
+
+<script src="../../../static/js/scratchblocks-v3.1-min.js"></script>
+
+
+
+  <footer>
+Scratch is developed by the Lifelong Kindergarten Group at the MIT Media Lab. See <a href="http://scratch.mit.edu">http://scratch.mit.edu.</a> <br/>
+Unless specified otherwise, this project is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/deed">CC-BY-SA 4.0</a> license.<br/>
+
+Created by Rhys Moyne for <a href="http://www.creativekidssa.com.au">Creative Kids</a>.<br/> <strong>License:</strong> <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html">GPLv2+</a> <strong>Source:</strong> <a href="../../../static/creativekids.zip">creativekids.zip</a> <a href="#" onclick="javascript:window.location.port=5000"><strong>Admin</strong></a></footer>
+    <script src="../../../static/js/imagesloaded.pkgd.min.js"></script>
+    <script src="../../../static/js/masonry.pkgd.min.js"></script>
+    <script src="../../../static/js/classie.js"></script>
+    <script src="../../../static/js/cbpGridGallery.js"></script>
+    <script>
+      new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
+    </script>
+</body>
+</html>
